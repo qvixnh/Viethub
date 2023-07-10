@@ -1,7 +1,5 @@
 ﻿use master
 go
-drop database ViethubV3
-go
 create database ViethubV3
 go
 use ViethubV3
