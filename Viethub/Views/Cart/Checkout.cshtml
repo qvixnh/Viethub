@@ -1,0 +1,90 @@
+﻿@model Viethub.Models.UserAccount
+
+@{
+    ViewBag.Title = "Checkout";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- breadcrumb-section -->
+<div class="breadcrumb-section breadcrumb-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="breadcrumb-text">
+                    <p>Fresh and Organic</p>
+                    <h1>Check out</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end breadcrumb section -->
+<!-- cart -->
+<div class="cart-section mt-150 mb-150">
+    <div class="container">
+        <div class="row">
+            <div class=" col-lg-8">
+                <div class="list-box d-flex">
+                    <div class="list-icon">
+                        <i class="fas fa-shipping-fast"></i>
+                    </div>
+                    <div class="content">
+                        <h3>Your delivery address</h3>
+                        <p>@Model.address</p>
+                    </div>
+                </div>
+                <div class="coupon-section">
+                    <h3>Apply Coupon</h3>
+                    <div class="coupon-form-wrap">
+                        @using (Html.BeginForm("getVoucher", "Cart", FormMethod.Post))
+                        {
+                            <p><input type="text" name="voucher" placeholder="Coupon"></p>
+                            <p><input type="submit" value="Apply"></p>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="total-section">
+                    <table class="total-table">
+                        <thead class="total-table-head">
+                            <tr class="table-total-row">
+                                <th>Total</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="total-data">
+                                <td><strong>Subtotal: </strong></td>
+                                <td>@ViewBag.SubTotalPrice</td>
+                            </tr>
+                            <tr class="total-data">
+                                <td><strong>Shipping: </strong></td>
+                                <td>@ViewBag.Shipment
+                                </td>
+                            </tr>
+
+                            <tr class="total-data">
+                                <td><strong>Voucher: </strong></td>
+                                <td>@ViewBag.voucher
+                                </td>
+                            </tr>
+                            <tr class="total-data">
+                                <td><strong>Total: </strong></td>
+                                <td>@ViewBag.Total</td>
+                            </tr> 
+                        </tbody>
+                    </table>
+                    <div class="cart-buttons">
+                        <a href="cart.html" class="boxed-btn">Update Cart</a>
+                        <a href="checkout.html" class="boxed-btn black">Check Out</a>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end cart -->

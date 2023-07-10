@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Viethub.Models.Team>
+<div class="mt-150">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 offset-lg-2 text-center">
+                <div class="section-title">
+                    <h3>Our <span class="orange-text">Team</span></h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas itaque eveniet beatae optio.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6">
+                    <div class="single-team-item">
+                        <div class="single-product-img">
+                            <img src="~/Content/assets/img/team/@item.img" alt="">
+                        </div>                        
+                        <h4>@item.name<span>@item.Role</span></h4>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

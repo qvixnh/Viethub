@@ -1,0 +1,88 @@
+﻿@using Viethub.Help
+@model IEnumerable<Viethub.Models.Banner>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Quản lý Banner</h1>
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Danh sách banner</h6>
+
+        </div>
+        <div class="btn-group col-2">
+
+            @Html.NoEncodeActionLink("<span class='fas fa-plus' ></span> Thêm mới", "Create", "Create", "Banners", routeValues: new { }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary" })
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTables-example" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th><b>STT</b></th>
+                            <th><b>Tiêu đề</b></th>
+                            <th><b>Ảnh slide</b></th>
+                            <th><b>Hiển thị</b></th>
+                            <th><b>Thứ tự</b></th>
+                            <th><b>Ngày cập nhật</b></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+
+                    <tfoot>
+                        <tr>
+                            <th><b>STT</b></th>
+                            <th><b>Tiêu đề</b></th>
+                            <th><b>Ảnh slide</b></th>
+                            <th><b>Hiển thị</b></th>
+                            <th><b>Thứ tự</b></th>
+                            <th><b>Ngày cập nhật</b></th>
+                            <th></th>
+                        </tr>
+                    </tfoot>
+                    <tbody>
+                        @{var Number = 1; }
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.Raw(Number++)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.name)
+                                </td>
+                                <td>
+                                    <img src="~/Content/assets/img/@item.icon" width="50px" />
+                                </td>
+                                <td>
+                                    <!--Html.DisplayFor(modelItem => item.hide)-->
+                                    @(item.hide.GetValueOrDefault(false) ? "Ẩn": "Hiển thị" )
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.order)
+                                </td>
+                                <td>
+                                    <!--Html.DisplayFor(modelItem => item.datebegin)-->
+                                    @(item.datebegin.HasValue ? item.datebegin.Value.ToString("dd/MM/yyyy") : "")
+                                </td>
+                                <td>
+                                    @Html.NoEncodeActionLink("<i class=\"fas fa-pen\"></i>", "Edit", "Edit", "Banners", routeValues: new { id = item.id }, htmlAttributes: new { data_modal = "", @class = "btn btn-warning btn-square btn-sm" })
+                                    @Html.NoEncodeActionLink("<i class=\"fas fa-info-circle\"></i>", "Details", "Details", "Banners", routeValues: new { id = item.id }, htmlAttributes: new { data_modal = "", @class = "btn btn-info btn-square btn-sm" })
+                                    @Html.NoEncodeActionLink("<i class=\"fas fa-trash\"></i>", "Delete", "Delete", "Banners", routeValues: new { id = item.id }, htmlAttributes: new { data_modal = "", @class = "btn btn-danger btn-square btn-sm" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!-- /.container-fluid -->

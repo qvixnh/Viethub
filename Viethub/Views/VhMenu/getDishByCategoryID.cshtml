@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Viethub.Models.Dish>
+@foreach (var i in Model)
+{
+    <div class="single-product-item">
+        <div class="product-image">
+            <a href="@ViewBag.meta/@i.meta/@i.id"><img src="~/Content/assets/img/products/@i.img" alt=""></a>
+        </div>
+        <h3>@i.name</h3>
+        <p class="product-price"><span>Per Kg</span> 85$ </p>
+        <a href="/Cart/addToCart/@i.id" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+    </div>
+} 

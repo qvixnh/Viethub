@@ -1,0 +1,94 @@
+﻿@model Viethub.Models.Menu
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    <!-- Page Heading -->
+    <h1 class="h3 mb-2 text-gray-800">Quản lý  thanh menu</h1>
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Xóa mục</h6>
+        </div>
+        <div class="card-body">
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Tiêu đề</h6>
+                            </div>
+                            <div class="card-body">
+                                @Html.DisplayFor(model => model.name)
+
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Meta</h6>
+                            </div>
+                            <div class="card-body">
+                                @Html.DisplayFor(model => model.meta)
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Đường dẫn</h6>
+                            </div>
+                            <div class="card-body">
+                                @Html.DisplayFor(model => model.link)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Ngày đăng</h6>
+                            </div>
+                            <div class="card-body">
+                                @Html.DisplayFor(model => model.datebegin)
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Trạng thái hiển thị</h6>
+                            </div>
+                            <div class="card-body">
+                                @Html.DisplayFor(model => model.hide)
+
+                            </div>
+                        </div>
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-primary">Thứ tự hiển thị</h6>
+                            </div>
+                            <div class="card-body">
+                                @Html.DisplayFor(model => model.order)
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Delete" class="btn btn-danger" />
+                    </div>
+                </div>
+                <div class="form-actions no-color">
+                    @Html.ActionLink("Back to List", "Index")
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->

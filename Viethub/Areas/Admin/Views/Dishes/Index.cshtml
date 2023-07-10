@@ -1,0 +1,51 @@
+﻿@using Viethub.Help
+@model Viethub.Models.Category
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Quản lý Món ăn</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Danh sách món ăn</h6>
+    </div>
+    <div class="card-body">
+        <div class="btn-group">
+
+            @Html.NoEncodeActionLink("<span class='fas fa-plus'></span> Thêm mới", "Create", "Create", "Dishes", routeValues: new { }, htmlAttributes: new { data_modal = "", @class = "btn btn-primary" })
+        </div>
+        <div class="btn-group">
+            @Html.DropDownListFor(model => model.id, (SelectList)ViewBag.Category, " --- Tất cả sản phẩm --- ",
+                                                            new { @class = "form-control", @id = "Category" })
+        </div>
+        <div id="getDishes"></div>
+    </div>
+</div>
+@section _Footer
+{
+    <script>
+        $(document).ready(function () {
+            function getProduct() {
+                var CategoryId = $('#Category').val();
+                $.ajax({
+                    url: '@Url.Action("getDishes", "Dishes")',
+                    type: "GET",
+                    data: { id: CategoryId },
+                    success: function (data) {
+                        $("#getDishes").html(data);
+                    },
+                    error: function (data) {
+                        alert("something went wrong.");
+                    }
+                });
+            }
+            getProduct();
+            $("#Category").change(function () {
+                getProduct();
+            })
+        });
+    </script>
+}

@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="row">
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Số món ăn (món)
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.DishesCount</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-hamburger fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Earnings (Monthly) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-success shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Loại món ăn (loại)
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.CategoriesCount</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-list-alt fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Tin tức (tin)
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.NewsCount</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Lượng người dùng
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">@ViewBag.UserAccountsCount</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Quản lý sản phẩm</h6>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/Teams/Index" class="btn btn-success btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-list-alt"></i>
+                    </span>
+                    <span class="text">Danh sách nhân viên bếp</span>
+                </a>
+            </div>
+            <div class="card-body" style="width: 95%">
+                <a href="/Admin/Categories/Index" class="btn btn-success btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-list-alt"></i>
+                    </span>
+                    <span class="text">Danh sách loại</span>
+                </a>
+            </div>
+
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/Dishes/Index" class="btn btn-success btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-hamburger"></i>
+                    </span>
+                    <span class="text">Danh sách món</span>
+                </a>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/Dishes/Index" class="btn btn-success btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-gifts"></i>
+                    </span>
+                    <span class="text">Danh sách voucher</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Quản lý phụ website</h6>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/News/Index" class="btn btn-primary btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-user"></i>
+                    </span>
+                    <span class="text">Quản lý người dùng</span>
+                </a>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/News/Index" class="btn btn-primary btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-newspaper"></i>
+                    </span>
+                    <span class="text">Danh sách Tin tức</span>
+                </a>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/News/Index" class="btn btn-primary btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-newspaper"></i>
+                    </span>
+                    <span class="text">Thanh menu</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Quản lý tùy chỉnh</h6>
+            </div>
+            <div class="card-body"style="width:95%">
+                <a href="/Admin/Footers/Index" class="btn btn-warning btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-flag"></i>
+                    </span>
+                    <span class="text">Footer</span>
+                </a>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/Banners/Index" class="btn btn-warning btn-icon-split btn-lg">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-file"></i>
+                    </span>
+                    <span class="text">Banner</span>
+                </a>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/Logoes/Index" class="btn btn-warning btn-icon-split btn-lg ">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-image"></i>
+                    </span>
+                    <span class="text">Logo</span>
+                </a>
+            </div>
+            <div class="card-body"style="width: 95%">
+                <a href="/Admin/otherInfoes/Index" class="btn btn-warning btn-icon-split btn-lg ">
+                    <span class="icon text-white-50">
+                        <i class="fas fa-image"></i>
+                    </span>
+                    <span class="text">Thông tin khác</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="75ffc14349b44043b8952cf8f625cabb" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="ViethubModel.Banner" Width="1.5" PointX="5.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ViethubModel.Category" Width="1.5" PointX="0.75" PointY="1.125" />
+        <EntityTypeShape EntityType="ViethubModel.Dish" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="ViethubModel.Footer" Width="1.5" PointX="0.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ViethubModel.Logo" Width="1.5" PointX="2.75" PointY="5.75" />
+        <EntityTypeShape EntityType="ViethubModel.Menu" Width="1.5" PointX="5.75" PointY="4.75" />
+        <EntityTypeShape EntityType="ViethubModel.New" Width="1.5" PointX="7.75" PointY="0.75" />
+        <EntityTypeShape EntityType="ViethubModel.Team" Width="1.5" PointX="7.75" PointY="4.75" />
+        <AssociationConnector Association="ViethubModel.FK__Dish__categoryid__2A4B4B5E" />
+        <EntityTypeShape EntityType="ViethubModel.otherInfo" Width="1.5" PointX="10.125" PointY="7" />
+        <EntityTypeShape EntityType="ViethubModel.UserAccount" Width="1.5" PointX="5.25" PointY="7.5" />
+        <EntityTypeShape EntityType="ViethubModel.CartDetail" Width="1.5" PointX="11.5" PointY="3.375" />
+        <AssociationConnector Association="ViethubModel.FK_CartDetail_Product" />
+        <AssociationConnector Association="ViethubModel.FK_CartDetail_Cart" />
+        <EntityTypeShape EntityType="ViethubModel.Voucher" Width="1.5" PointX="7.375" PointY="7.75" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

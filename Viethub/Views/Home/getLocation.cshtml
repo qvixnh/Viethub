@@ -1,0 +1,10 @@
+﻿@model IEnumerable<Viethub.Models.otherInfo>
+
+<!-- google map section -->
+d google map section -->
+@foreach (var item in Model)
+{
+    <div class="embed-responsive embed-responsive-21by9">
+            @Html.Raw(@item.description)
+    </div>
+                }

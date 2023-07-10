@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Viethub.Models.otherInfo>
+
+<div class="col-lg-4">
+    @foreach(var item in Model) {
+        <div class="contact-form-wrap">
+            <div class="contact-form-box">
+                <h4><i class="fas fa-flag"></i> @item.name</h4>
+                <p>@Html.Raw(@item.description)</p>
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Viethub.Models.Banner>
+<!-- home page slider -->
+<div class="homepage-slider">
+    <!-- single home slider -->
+    @foreach (var i in Model)
+    {
+        <div class="single-homepage-slider " style="background-image: url('/Content/assets/img/@i.icon');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-lg-7 offset-lg-1 offset-xl-0">
+                        <div class="hero-text">
+                            <div class="hero-text-tablecell">
+                                <p class="subtitle">@i.name</p>
+                                <h1>@i.Description</h1>
+                                <div class="hero-btns">
+                                    <a href="shop.html" class="boxed-btn">Fruit Collection</a>
+                                    <a href="contact.html" class="bordered-btn">Contact Us</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+<!-- end home page slider -->

@@ -1,0 +1,74 @@
+﻿@model Viethub.Models.Voucher
+
+@{
+ViewBag.Title = "Create";
+Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Quản lý voucher</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Thêm mới voucher</h6>
+    </div>
+    <div class="card-body">
+        <div class="panel-body">
+            @using (Html.BeginForm("Create", "Vouchers", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @Html.HiddenFor(model => model.id)
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                @Html.Label("Tên", htmlAttributes: new { @class = "control-label col-md-2" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Mật khẩu voucher", htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.voucherpass, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.voucherpass, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.Label("Giá trị", htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-12">
+                                    @Html.EditorFor(model => model.value, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.value, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                @Html.Label("Ẩn", htmlAttributes: new { @class = "control-label col-md-12" })
+                                <div class="col-md-10">
+                                    @{
+                                        bool hide = false;
+                                    }
+                                    @Html.CheckBoxFor(model => hide)
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Create" class="btn btn-danger" />
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+        <div>
+            @Html.ActionLink("Back to list", "Index")
+        </div>
+    </div>
+</div>

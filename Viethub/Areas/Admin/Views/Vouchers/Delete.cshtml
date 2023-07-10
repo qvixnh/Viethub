@@ -1,0 +1,68 @@
+﻿@model Viethub.Models.Voucher
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<!-- Page Heading -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">Xóa voucher</h6>
+    </div>
+    <div class="card-body">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Tên voucher</h6>
+                        </div>
+                        <div class="card-body">
+                            @Html.DisplayFor(model => model.name)
+
+                        </div>
+                    </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Mật khẩu voucher</h6>
+                        </div>
+                        <div class="card-body">
+                            @Html.DisplayFor(model => model.voucherpass)
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Giá trị voucher</h6>
+                        </div>
+                        <div class="card-body">
+                            @Html.DisplayFor(model => model.value)
+                        </div>
+                    </div>
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">Ngày đăng</h6>
+                        </div>
+                        <div class="card-body">
+                            @Html.DisplayFor(model => model.datebegin)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                </div>
+            </div>
+            <div class="form-actions no-color">
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</div>
